@@ -1,0 +1,178 @@
+import React, { useCallback } from "react";
+import  { useState } from "react";
+import ReactFlow, {
+  useNodesState,
+  useEdgesState,
+  addEdge,
+  Panel,
+  Controls,
+  MarkerType,
+} from "reactflow";
+import { Alert, AlertTitle, Button } from "@mui/material";
+import dagre from "dagre";
+
+import DefaultEdge from "components/diagrams/DefaultEdge";
+
+import "reactflow/dist/style.css";
+import { convertEdges2NodeSequence } from "services/pipeline.services";
+import { useUpdateTaskSequenceMutation } from "state/apiSlice";
+
+const proOptions = { hideAttribution: true };
+
+const dagreGraph = new dagre.graphlib.Graph();
+dagreGraph.setDefaultEdgeLabel(() => ({}));
+
+const nodeWidth = 172;
+const nodeHeight = 36;
+
+const getLayoutedElements = (nodes, edges, direction = "LR") => {
+  const isHorizontal = direction === "LR";
+  dagreGraph.setGraph({ rankdir: direction });
+
+  nodes.forEach((node) => {
+    dagreGraph.setNode(node.id, { width: nodeWidth, height: nodeHeight });
+  });
+
+  edges.forEach((edge) => {
+    dagreGraph.setEdge(edge.source, edge.target);
+  });
+
+  dagre.layout(dagreGraph);
+
+  nodes.forEach((node) => {
+    const nodeWithPosition = dagreGraph.node(node.id);
+    node.targetPosition = isHorizontal ? "left" : "top";
+    node.sourcePosition = isHorizontal ? "right" : "bottom";
+
+    node.position = {
+      x: nodeWithPosition.x - nodeWidth / 2,
+      y: nodeWithPosition.y - nodeHeight / 2,
+    };
+
+    return node;
+  });
+
+  return { nodes, edges };
+};
+
+const edgeTypes = {
+  defaultEdge: DefaultEdge,
+};
+
+const TaskSequenceFlow = (props) => {
+  console.log("props: ", props);
+
+  const { pipelineTasks } = props;
+
+  const [updateTaskSequence] = useUpdateTaskSequenceMutation();
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const { nodes: initialNodes, edges: initialEdges } = pipelineTasks[0];
+
+  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
+  const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges || [{}]);
+
+  const onConnect = useCallback(
+    (params) => setEdges((els) => addEdge(params, els)),
+    []
+  );
+
+  const onDeleteEdge = (id) => {
+    console.log(`remove ${id}`);
+    setEdges((egdes) => egdes.filter((edge) => edge.id !== id));
+  };
+
+  const onLayout = useCallback(
+    (direction) => {
+      const { nodes: layoutedNodes, edges: layoutedEdges } =
+        getLayoutedElements(nodes, edges, direction);
+
+      setNodes([...layoutedNodes]);
+      setEdges([...layoutedEdges]);
+    },
+    [nodes, edges]
+  );
+
+  const onSaveClick = async (e) => {
+    const result = await convertEdges2NodeSequence(edges);
+    if (result?.status === "error") {
+      setErrorMessage(result.message);
+    } else {
+      setErrorMessage("");
+
+      console.log("Result: ", result);
+
+      try {
+        await updateTaskSequence({ data: result.data });
+      } catch (error) {
+        setErrorMessage("Error while task_sequence column in tbl_task.");
+      }
+    }
+    // update the records in tbl_task.
+  };
+
+  const defaultEdgeOptions = {
+    style: { stokeWidth: 2, stoke: "black" },
+    type: "defaultEdge",
+    data: { onDelete: onDeleteEdge },
+    markerEnd: {
+      type: MarkerType.ArrowClosed,
+      color: "black",
+    },
+  };
+
+  return (
+    <div style={{ width: "1000px", height: "500px" }}>
+      <ReactFlow
+        nodes={nodes}
+        edges={edges}
+        onNodesChange={onNodesChange}
+        onEdgesChange={onEdgesChange}
+        onConnect={onConnect}
+        edgeTypes={edgeTypes}
+        defaultEdgeOptions={defaultEdgeOptions}
+        fitView
+        proOptions={proOptions}
+      >
+        {/* <MiniMap /> */}
+        <Controls />
+        <Panel position="top-right">
+          <Button
+            variant="contained"
+            onClick={onSaveClick}
+            style={{
+              backgroundColor: "#1E6738",
+              float: "right",
+              color: "#FFFFFF",
+              fontWeight: "600",
+            }}
+          >
+            Save
+          </Button>
+          <Button
+            variant="contained"
+            onClick={() => onLayout("LR")}
+            style={{
+              backgroundColor: "#1E6738",
+              float: "right",
+              color: "#FFFFFF",
+              fontWeight: "600",
+            }}
+          >
+            Arrange Items
+          </Button>
+        </Panel>
+        <Panel position="bottom-left">
+          {errorMessage !== "" && (
+            <Alert severity="error">
+              <AlertTitle>Error</AlertTitle>
+              {errorMessage}
+            </Alert>
+          )}
+        </Panel>
+      </ReactFlow>
+    </div>
+  );
+};
+
+export default TaskSequenceFlow;

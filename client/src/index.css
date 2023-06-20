@@ -1,0 +1,375 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+
+html,
+body,
+#root,
+.app {
+  height: 100%;
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  background-image: "assets/imgBg1.jpg";
+}
+
+/* ::-webkit-scrollbar {
+  width: 10px;
+} */
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #7a7f9d;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background:#f0f0f0; /* #21295c; */
+}
+::-webkit-scrollbar-track {
+  background: #f1cccc;
+}
+
+/* Handle on Hover */
+/* ::-webkit-scrollbar-track:hover {
+  background: #21295c;
+} */
+
+/* CSS over right started Anil*/
+/* CheckBox checked Color and Check box text color */
+
+.css-j204z7-MuiFormControlLabel-root .MuiFormControlLabel-label {
+  color: #111111!important;
+  font-weight: bold!important;
+  min-width: 70px;
+}
+/* .css-kldd2w-MuiButtonBase-root-MuiCheckbox-root.MuiCheckbox-indeterminate */
+.css-kldd2w-MuiButtonBase-root-MuiCheckbox-root.Mui-checked
+{
+  color: #4b437cd1!important;
+}
+
+/* End of checkBox Css */
+
+/* Login Page Css*/
+.css-114hxb1 {
+  gap: 0px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  padding-left: 23px;
+}
+.css-kbtx2h-MuiFormControl-root-MuiTextField-root {
+  margin-bottom: 16px!important;
+    margin-left: 40px!important;
+}
+.css-t8hcva-MuiFormLabel-root-MuiInputLabel-root {
+  color: rgb(0 0 0 / 100%);
+  font-weight: bold!important;
+  font-size: 15px!important;
+  /* margin-left: 10px;   */
+  margin-left: 20px;
+
+}
+/* Login Msg Css*/
+.css-1bjc7eo-MuiTypography-root-MuiDialogContentText-root {
+  font-weight: bold!important;
+  font-size: 13px!important;
+  line-height: 1.5;
+  color: #010118!important;
+  /* color: #010318de!important; */
+    margin-left: 40px!important;
+    margin-bottom: 10px!important;
+}
+.css-1t1j96h-MuiPaper-root-MuiDialog-paper{
+  color: darkred !important;
+  max-width: 470px!important;
+  /* max-width: 536px!important; */
+  border-radius: 10px!important;
+}
+
+.css-40j64x-MuiInputBase-root-MuiOutlinedInput-root{
+  width: 350px!important;
+  height:40px!important;
+  border-color: navy;
+  margin-left: -27px;
+}
+
+/* .css-0 {
+  padding-top: 10px;
+} */
+/* background-color: rgb(0, 72, 190)!important; */
+/* .css-1uoon1p-MuiButtonBase-root-MuiButton-root {
+  color: #FFFFFF!important;
+    background: rgb(26,115,232)!important;
+} */
+
+.css-ibwmxy-MuiTypography-root{
+  width: 375px!important;
+  /* margin-left: 40px!important; */
+}
+/*Login Css End */
+
+/* PopUp Windows and Login Page header Tttle Text and Color */
+.css-133elmq-MuiTypography-root,.css-1su0faa-MuiTypography-root-MuiDialogTitle-root 
+{ margin: 0;  font-family: Inter,sans-serif; 
+  font-size: 19px!important;font-weight: 800!important; 
+  line-height: 1.6!important; color: rgb(36 7 58); /* rgb(116, 12, 98);*/ }
+
+/* Popup Window close button*/
+.css-13guync-MuiButtonBase-root-MuiButton-root,.css-8je8zh-MuiTouchRipple-root {
+	color: #030934!important;
+}
+
+
+ /* Top Header backgroud color */
+.css-ap85ek-MuiPaper-root-MuiAppBar-root{
+	  /* background-color: #0ff3e8!Important; */
+    /* Below is Initial color changes on 3 April 2023 */
+    /* background-color: #f0f0f0;  */
+     background-color: #bac3cd!Important;
+}
+
+/* Left Menu parent Items Color */
+.css-c30r8q-MuiTypography-root{
+  color: #0d34ef!important;
+  margin: 1.25rem 0 1rem 3rem!important;
+  font-size: 15px!important;
+  font-weight: bold!important;
+}
+/* Left Menu List Items text Color */
+.css-1mxduwu-MuiTypography-root {
+  font-weight: 600!important;
+  color: #011406!important;
+}
+
+  .css-m5mdli-MuiTypography-root {color: #1c0102!important;} /* IKart Font Color*/
+
+  /* Sidebar Background Color Black Bg Color=> #555*/
+   .css-12i7wg6-MuiPaper-root-MuiDrawer-paper {
+    /* background-color: #43BF82!important;  */
+    background-color:#bac3cd!important;
+  }
+
+/* Css for Grid Header and Footer*/
+.css-3xtpv4 .MuiDataGrid-columnHeaders {
+  background-color: #050548!important;
+  border: none;  color: #ffffff!important;  font-size: 17px!important;  font-weight: bold!important;
+  line-height: 38px!important;  min-height: 38px!important;  max-height: 38px!important; font-family: "sans-serif!important";
+}
+    /* CSS start for Grid */
+.css-3xtpv4 .MuiDataGrid-footerContainer {
+      border-top: none!important; background-color: #bbb6a8!important;
+      line-height: 38px!important;  min-height: 38px!important; max-height: 38px!important;
+   }
+.css-13isb9g-MuiTablePagination-selectLabel,
+.css-157cbgh-MuiInputBase-root-MuiTablePagination-select,
+.css-1l0kfde-MuiTablePagination-displayedRows{font-weight: bold!important;line-height: 38px!important;min-height: 38px!important;max-height: 38px!important;}
+.css-3xtpv4 .MuiDataGrid-virtualScroller {background-color: #f5f5f5; min-height: 352px!important; max-height: 323px!important;}
+.MuiDataGrid-row.Mui-odd {background-color: rgb(238, 229, 238);}
+.MuiDataGrid-row:Mui-even{ background-color: rgb(217, 241, 196);}
+/* .MuiDataGrid-row:nth-child(even){ background-color: rgb(224, 231, 240);} */
+
+/* .MuiDataGrid-virtualScroller, */
+.css-1w5m2wr-MuiDataGrid-virtualScroller{margin-top:38px!important;height: 311px!important;}
+
+/* Below Css is for Layout body top Margin, Title and subtitle header*/
+.css-8tuymw{margin: 1.5rem 1.5rem!important;}
+
+/* To Minimise the space between Grid and Titles bar */
+.css-3xtpv4 .MuiDataGrid-root {margin-top: -30px!important;}
+
+/* Grid Css End  .css-1fd6b38 */
+
+ /* Below Css for Ligth Mode Grid content color */
+ .css-x4ghuj-MuiDataGrid-root {font-weight: bold!important;font-size: 12px!important; color:#111111; }
+
+ /* Below Css for Dark Mode Grid content color */
+ /* .css-jac2oh-MuiDataGrid-root {color: #e9a60b!important;}
+ .css-6px5ej .MuiDataGrid-columnHeaders {border-bottom: none; background-color: black!important;} */
+
+/* To increased and Decreased the width of scroll bar, Gid and Side Menu bar */
+ /* ::-webkit-scrollbar {width: 5px;} */
+
+ .css-5ivquo-MuiTypography-root {font-size:23px!important;color: #21295c!important; }
+ .css-1moanz8-MuiTypography-root {color:#2a2431!important; }
+
+ /* To adjustment of top menu bar content */
+  .css-1yo9slo-MuiToolbar-root { min-height: 53px!important;}
+
+
+/* Cards Css Overright shadowing and card Height*/
+/* .css-4w7fip-MuiPaper-root-MuiCard-root
+{
+    box-shadow: 4px 5px 6px 0px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(1 0 0 / 14%), 4px 2px 1px 1px rgb(0 0 0 / 12%)!important;
+    background-color:#d5f1d8de!important; border-radius: 1.25em!important;min-height: 205px; max-height: 205px;
+} */
+
+/* Seeting CARDS Height */
+.css-4w7fip-MuiPaper-root-MuiCard-root
+{
+    box-shadow: 4px 5px 6px 0px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(1 0 0 / 14%), 4px 2px 1px 1px rgb(0 0 0 / 12%)!important;
+    background-color:#d5f1d8de!important;
+    /*background-color:#b2bef3de!important; */  /*  New Cards Backgroud color */
+    border-radius: 1.25em!important;min-height: 218px; 
+    min-height: 220px;min-height: 220px;
+}
+
+
+/* Cards Text Color */
+/* Card ID */
+.css-171fio0-MuiTypography-root,.css-x1y9a8-MuiTypography-root {color: #0c29f7!important;font-weight: 700!important;font-size: 17px!important; margin-top: -9px!important;}
+.css-t8y7jx-MuiTypography-root{color: #3c1529 !important;font-weight: 700!important;margin-top: -15px!important;} /* #191F45; */
+.css-rtoe1j-MuiTypography-root{color: #3c1529 !important;font-weight: 700!important;}
+.css-uf4kkf-MuiTypography-root{color: #3c1529 !important;} /* Sub Title */
+.css-1t6i9l4-MuiTypography-root {font-weight: 700!important;color: #a609e7!important; margin-top: -15px!important;}
+.css-1t6e9jv-MuiCardActions-root {padding-left: 16px!important;padding-bottom: 8px!important;padding-top: 15px!important;font-weight: bold!important;}
+.css-bxol1o-MuiButtonBase-root-MuiButton-root {
+  padding-left: 0px!important;
+  padding-right: 0px!important;
+  font-weight: bold!important;
+}
+/* Css for See More Text on Connection */
+.css-1ssmzwg-MuiButtonBase-root-MuiButton-root {font-weight: bold!important; text-decoration: none!important;color: #d91a1a!important;  padding-left: 0px!important;margin-top: -4px!important;}
+
+/* To adjust Cards anchor button positioning, Explore Projects*/
+/* .css-46bh2p-MuiCardContent-root{height: 80%!important;} */
+
+ a:-webkit-any-link { text-decoration: none!important;
+  /* color: #d91a1a!important; */
+  color: #d91a1a!important;
+};
+/* end of cards color */
+
+/* Css for New Connection */
+.css-12zpy9x-MuiButtonBase-root-MuiToggleButton-root { color: #a31106!important; font-weight: 800!important;}
+.css-12zpy9x-MuiButtonBase-root-MuiToggleButton-root.Mui-selected {  color: #488ac9!important;  font-weight: bold!important;}
+
+/* Below Css is for New Connection top margin */
+.css-1abtl2q {margin: 1.5rem 0.5rem!important;}
+.css-1l4w6pd,.css-1sociz6 {justify-content: left!important; margin-left: 40px!important;} /* Css for Top row */
+.css-mjlvw-MuiToggleButtonGroup-root {margin-left: 40px!Important; background-color: #eaecf7;} /* Css for Left column */
+.css-9oeoe{  margin: 2rem 9rem!important;} /* Css for Connection object left alignement */
+/* .css-1qnwrrd-MuiTypography-root {
+  font-family: Inter,sans-serif;
+} */
+/* End of Css margin */
+
+
+
+/* Css for POP Up Windows */
+
+/* .css-12rl710-MuiPaper-root-MuiDialog-paper {margin: 0px !important;} */
+
+/* PopUp Windows and Login Page header BgCOlor */
+.css-1uym2bv-MuiTypography-root-MuiDialogTitle-root,
+.css-1su0faa-MuiTypography-root-MuiDialogTitle-root {
+  /* padding: 10px 14px;  */
+  padding-top: 6px!important;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  background-color:#07eded; /* #0cf5ea8a; #1acfbe; */
+  margin-top: 0px;
+  margin-bottom: -1px;
+  height:45px;/* 57px; */
+}
+.css-133elmq-MuiTypography-root { margin: 0;  font-family: Inter,sans-serif; font-size: 19px!important;font-weight: 800!important; line-height: 1.6!important; color: rgb(36 7 58); /* rgb(116, 12, 98);*/ }
+
+.css-6fq61y {
+    display: grid;  gap: 8px!important;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+    /* width: 410px;
+    margin-left: -78px; */
+}
+.css-1gxcl1v-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root
+{
+  width: 350px;
+
+}    
+
+/* Top Section, Search Icon Css */
+.css-abowrd{border-radius: 28px!important; margin-bottom: 0px!important;    min-height: 29px!important;}
+/* PopUp Modal Windows */
+.css-12rl710-MuiPaper-root-MuiDialog-paper{
+    /* max-width: 860px!important; */
+    /* max-width: 780px!important; */
+    max-width: 680px!important;
+    max-height: 580px!important;   
+    border-radius: 10px!important;
+    margin: 0px !important;
+}
+.css-j204z7-MuiFormControlLabel-root {margin: right 1px!important;}
+.css-dmmspl-MuiFormGroup-root {width: 910px!important;}
+.css-hz1bth-MuiDialog-container {margin-top: -30px!important;}
+.css-1t4vnk2-MuiDialogContent-root {padding: 0px 0px 50px 0px!important;}
+.css-9vna8i-MuiButtonBase-root-MuiIconButton-root { color:#FFFFFF!important; font-Weight: 800!important; }
+
+/* End of PopUp Windows */
+
+
+/* Task Form Css */
+/* .css-1uckud4-MuiButtonBase-root-MuiButton-root {
+      background-color: #0c29f7!important;
+
+} */
+.css-5um2ql-MuiInputBase-root-MuiOutlinedInput-root,
+.css-pqg37x-MuiInputBase-root-MuiOutlinedInput-root,
+.css-1gxcl1v-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root
+{
+  width: 360px!important;
+  margin-left: 12px;
+  min-height: 10px;
+}
+.css-i9gxme{
+margin-left: -2px;
+}
+
+/* Connection Form Csss */
+.css-1mebekk-MuiToggleButtonGroup-root{
+    margin-left: -32px;
+    max-height: 50px;
+}
+.css-mjlvw-MuiToggleButtonGroup-root .MuiToggleButtonGroup-grouped{
+  max-height: 50px;
+}
+
+/* Css for Password and Security Token */
+.css-40j64x-MuiInputBase-root-MuiOutlinedInput-root {
+  min-width: 355px;
+}
+
+/* Space before and after of reset button */
+.css-1hmp5iw-MuiButtonBase-root-MuiButton-root{
+  margin-left: 12px!important;
+    margin-right: 12px!important;
+}
+/* .css-siyejb {float: left;} */
+.css-siyejb{ margin-bottom: -51px;}
+/* .css-1idn90j-MuiGrid-root{margin-bottom: -34px;} */
+
+.css-fpx8lk {margin-left: -115px!important;}
+.css-r6soyt{margin-left: -120px!important;}
+
+/* Preview Pages*/
+.css-18rp89 .MuiDataGrid-footerContainer {
+    min-height: 36px;
+    max-height: 36px;
+}
+
+.css-18rp89 .MuiDataGrid-toolbarContainer .MuiButton-text{
+  color: #010e03!important;
+    /* background-color: #a9c3dd; */
+    font-size: 12px;
+    width: 70px;
+    margin-bottom: 4px;
+}
+.css-1ivocis-MuiButtonBase-root-MuiButton-root{
+  margin-left: "-18px",
+}
+.btnCss{
+    font-Size: 14px;
+    font-Weight: bold;
+    border-Radius:10px;
+    background-Color :#4681f4!important;
+    color: #FFFFFF!important;
+    text-Transform:none;
+    line-Height:1.5;
+    width:140px;
+    padding: 7px 9px,
+ }
