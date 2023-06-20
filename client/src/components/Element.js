@@ -9,7 +9,7 @@ import MultiSelect from "./elements/MultiSelect";
 import Components from "./elements/Components";
 import Text from "./elements/Text"
 
-//props
+
 const Element = ({
   field: {
     field_type,
